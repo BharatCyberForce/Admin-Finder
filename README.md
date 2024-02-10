@@ -22,7 +22,7 @@ On terminal </br>
 
 
 ```diff
-git clone https://github.com/IndianCyberForce/AdminFinder
+git clone https://github.com/BharatCyberForce/AdminFinder
 ```
 
 ```diff
@@ -46,4 +46,3 @@ This video is just for an Instructive reason. Any activities or potentially exer
 
 ## Credits
 
-<b> Author <a href="https://www.facebook.com/TeamIndianCyberForce">Made By Mr.Grey_Hacker ❤️</a>
