@@ -1,4 +1,4 @@
-![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F7AB0A&width=435&lines=Indian+Cyber+Force;Develop+By+Mr.Grey_Hacker)
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F7AB0A&width=435&lines=Indian+Cyber+Force;Developed+By+Unknown+Admin+Of+ICF)
 
 
 # AdminFinder
