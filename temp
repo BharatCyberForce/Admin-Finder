@@ -1,0 +1,119 @@
+import requests
+from colorama import Fore
+import os,sys
+from os import system,name
+from time import sleep
+
+
+def flo(str):    
+    for c in str:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        sleep(.1)   
+
+def clear():
+    if name == 'nt':
+        _=system('cls')
+    else:
+        _=system('clear')
+
+clear()
+
+banner="""
+██   ██▄   █▀▄▀█ ▄█    ▄          ▄▄▄▄▄   ▄█▄    ██      ▄      ▄   ▄███▄   █▄▄▄▄ 
+█ █  █  █  █ █ █ ██     █        █     ▀▄ █▀ ▀▄  █ █      █      █  █▀   ▀  █  ▄▀ 
+█▄▄█ █   █ █ ▄ █ ██ ██   █     ▄  ▀▀▀▀▄   █   ▀  █▄▄█ ██   █ ██   █ ██▄▄    █▀▀▌  
+█  █ █  █  █   █ ▐█ █ █  █      ▀▄▄▄▄▀    █▄  ▄▀ █  █ █ █  █ █ █  █ █▄   ▄▀ █  █  
+   █ ███▀     █   ▐ █  █ █                ▀███▀     █ █  █ █ █  █ █ ▀███▀     █   
+  █          ▀      █   ██                         █  █   ██ █   ██          ▀    
+ ▀                                                ▀                               
+"""
+
+
+
+def Grey():
+    path=os.getcwd()
+    tree=(path+"/panel.txt")
+    hmm=os.path.exists(tree)
+    if hmm == True:
+        new()
+    elif hmm == False:
+        print(Fore.GREEN+"Installing....")
+        os.system('wget https://raw.githubusercontent.com/IndianCyberForce/ICF/main/panel.txt')
+        sleep(2)
+        clear()
+        print(Fore.GREEN+"Installed!")
+        sleep(2)
+        clear()
+        new()
+def new():
+    path=os.getcwd()
+    my=(path+"/admin.txt")
+    check=os.path.exists(my)
+    if check == True:
+        Menu()
+    else:
+        print(Fore.GREEN+"Installing....")
+        os.system('wget https://raw.githubusercontent.com/IndianCyberForce/ICF/main/admin.txt')
+        sleep(2)
+        clear()
+        print("Installed!")
+        sleep(2)
+        clear()
+        Menu()
+
+def Menu():
+    print(Fore.CYAN+banner)
+    print("1.Dashboard Scanner")
+    print("2.AdminPanel Finder \n")
+    qust=input("Choise A Option: ")
+    if qust == '1':
+        alu="admin.txt"
+    elif qust == '2':
+        alu="panel.txt"
+    else:
+        print(Fore.RED+"Choise A Correct Option!\n")
+        sleep(1)
+        Menu()
+    adm=input(str(Fore.WHITE+"\nEnter Site Name: "))
+    print("\n")
+    try:
+        file = open(f"{alu}","r")
+        for text in file.read().splitlines():
+            link=adm+text
+            req=requests.get(link,allow_redirects=False)
+            status=int(req.status_code)
+            
+            if status >= 400:
+                print(Fore.RED+" 404 Not Found "+link)
+            elif status >= 200 and status < 300:
+                print(Fore.GREEN+"[Found]200 "+link) 
+            elif status >= 300 and status < 400:
+                print(Fore.YELLOW+"[Found]302 "+link)  
+            elif status >= 500 and status < 600:
+                print(Fore.YELLOW+" "+link)   
+            else:
+                print(Fore.WHITE+" Another Status Code"+link)
+    except KeyboardInterrupt:
+        print(Fore.RED+" Request Error...")  
+        Sorry()  
+    file.close  
+    Sorry()
+def Sorry():
+    S = input(str(Fore.RED+"\nLet's Start Find Next Website Dash [Y/n]: "))
+    if S == 'y' or S == 'Y':
+        print(Fore.GREEN+banner)
+        Menu()
+    elif S == 'N' or S == 'n':
+        os.system('clear')
+        print(Fore.LIGHTGREEN_EX+"Exiting.....")
+        sleep(2)
+        clear()
+        print(Fore.RED+banner)
+        flo(Fore.CYAN+"Thank's For Using ICF Tools\n")
+        exit()                
+    else:
+        print(Fore.RED+"Enter Right Option   [Invalid Option!!!]")
+        Sorry()
+        
+Grey()
