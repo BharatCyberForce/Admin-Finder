@@ -10,10 +10,10 @@ Best Website Admin Panel Finder Tool
 </p> 
 
 ## Features
- [+] Fast Admin Panel Finder Tool
- [+] Admin Panel Finder And Admin Dashboard Finder
- [+] Easy to install and remove
- [+] More than 1000 potential admin panels
+ - Fast Admin Panel Finder Tool
+ - Admin Panel Finder And Admin Dashboard Finder
+ - Easy to install and remove
+ - More than 1000 potential admin panels
 
 
 Installation on Gnu / Linux OS. </br>
