@@ -2,7 +2,7 @@
 
 
 # AdminFinder
-Best Website Admin Panel Finder Tool
+Admin path Finder
 
 
 <p align="center">
